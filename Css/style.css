@@ -1,0 +1,14 @@
+body{
+    background-color: aqua;
+}
+table,
+td {
+    border: 1px solid #333;
+    width: 3px ;
+}
+
+thead,
+tr {
+    background-color: #333;
+    color: #fff;
+}
