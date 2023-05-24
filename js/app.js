@@ -1,60 +1,66 @@
-const btnNewTab = document.querySelector(".btn");
-btnNewTab.addEventListener("click",function(){
-        console.log(btnNewTab);
-  
+const btnCol = document.getElementById("btnCol");
+const btnLigne = document.getElementById("btnLigne");
+const table = document.getElementById("myTable");
+let colonnes = 0;
+let lignes = 0;
 
-  if (btnNewTab.className === "btn"){
-        // changement du texte du bouton 
-        btnNewTab.innerText = "Supprimer Votre Tableau";
-        btnNewTab.className = "btnRemove";
+btnCol.addEventListener("click", ajouterColonne);
+btnLigne.addEventListener("click", ajouterLigne);
 
-        const tab = document.querySelector(".newTab");
-        // creation tableau
-                console.log("hello");
-                const newTab = document.createElement("th");
-                newTab.innerText = "Votre tableau";
-                tab.appendChild(newTab);
-                newTab.setcontenteditable = "true"; 
-                newTab.setAttribute("contenteditable", "true"); 
-              
-                console.log(newTab);
-        // création du bouton colone
-                const newCol = document.createElement("button");
-                newCol.innerText = "Nouvelle Colonne";
-                newCol.className = "btnColonne";
-                document.querySelector(".buttons").appendChild(newCol);
+function ajouterColonne() {
+  colonnes++;
 
-                newCol.addEventListener("click", function(){
-                        const col = document.createElement("th");
-                        col.innerText = "Nouvelle Colonne";
-                        col.class = "colonne";
-                        tab.appendChild(col);
-                        col.setcontenteditable = "true"; 
-                        col.setAttribute("contenteditable", "true"); 
-                })
+  const colonne = table.rows;
 
+  for (let i = 0; i < colonne.length; i++) {
+    const row = colonne[i];
+    const cells = row.cells;
 
-        // création du bouton pour ligne 
-                const btnLigne = document.createElement("button");
-                btnLigne.innerText = "Nouvelle Ligne";
-                btnLigne.className = "btn-ligne";
-                newTab.appendChild(btnLigne);
-                
-                btnLigne.addEventListener("click", function(){
-                        console.log("hello");
-                        const ligne = document.querySelector(".newLignes");
-                        const newLigne = document.createElement("tr");
-                        newLigne.innerText = "Nouvelle Ligne";
-                        ligne.appendChild(newLigne);
-                        newLigne.setcontenteditable = "true"; 
-                        newLigne.setAttribute("contenteditable", "true");
-                });
-} 
-if(btnNewTab.className === "btnRemove") {
-        console.log("supprimer");
-        
+    // Vérifier si la colonne existe déjà dans cette ligne
+    if (cells.length < colonnes) {
+      const newColonne = row.insertCell();
+      newColonne.innerHTML = "Nouvelle cellule";
+      newColonne.classList.add(`col-${colonnes}`, `row-${i}`);
+      newColonne.contentEditable = true;
+    }
+  }
 
-// if (btnNewTab.className === "btn") { 
-        
+  const headerRow = table.querySelector("thead tr");
+  const headerCells = headerRow.cells;
+
+  // Vérifier si la colonne existe déjà dans l'en-tête
+  if (headerCells.length < colonnes) {
+    const newHeaderCell = document.createElement("th");
+    newHeaderCell.innerHTML = `Colonne ${colonnes}`;
+    
+    // Récupérer la classe de la première cellule de ligne correspondante
+    const firstRowCell = rows[0].cells[headerCells.length];
+    const cellClasses = firstRowCell.classList;
+
+    // Ajouter les classes de la cellule de ligne à la cellule d'en-tête
+    cellClasses.forEach((className) => {
+      newHeaderCell.classList.add(className);
+    });
+
+    headerRow.appendChild(newHeaderCell);
+  }
 }
-});
+
+function ajouterLigne() {
+  lignes++;
+
+  const tbody = table.querySelector("tbody");
+  const ligne = tbody.insertRow();
+  ligne.classList.add(`row-${lignes}`);
+
+  for (let i = 0; i < colonnes; i++) {
+    const newLigne = ligne.insertCell();
+    newLigne.innerHTML = "Nouvelle cellule";
+    newLigne.contentEditable = true;
+    newLigne.classList.add(`col-${i + 1}`, `row-${lignes}`);
+  }
+}
+
+
+
+ 

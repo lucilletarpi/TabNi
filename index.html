@@ -1,39 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/app.js" type="module"></script>
     <link rel="stylesheet" href="./Css/style.css">
-    <script src="js/app.js" defer></script>
-    <title>TabNi</title>
+    <title>Document</title>
 </head>
 <body>
-   <header class="title">
-    <h1>Vos tableurs en un click</h1>
-</header>
-
-   
-   <main class="buttons">
-    <button class="btn">Nouveau Tableau</button>
-    <div  class="tab">
-    <table>
-            <thead>
-                <tr class="newTab">
-                    <!-- <th colspan="2">The table header</th> -->
-                </tr>
-            </thead>
-            <tbody>
-                <tr class ="newLignes">
-                    <!-- <td>The table body</td>
-                    <td>with two columns</td> -->
-                </tr>
-            </tbody>
-        </table>
-    </div> 
-   </main>
-   <footer>
-    <a href="">Nous contacter</a>
-   </footer>
+  <main class="buttons">
+    <button id="btnCol">Nouvelle colonne</button>
+    <button id="btnLigne">Nouvelle Ligne</button>
+    <div class="tab">
+      <table id="myTable">
+        <thead>
+          <tr class="newTab"></tr>
+        </thead>
+        <tbody>
+          <!-- Lignes ici -->
+        </tbody>
+      </table>
+    </div>
+  </main>
 </body>
 </html>
