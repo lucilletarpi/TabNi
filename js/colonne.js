@@ -1,7 +1,7 @@
-// export const table = document.getElementById("myTable");
-// export let colonnes = 0;
-// export let isTableRemoved = false;
-// export function ajouterColonne() {
+//  const table = document.getElementById("myTable");
+//  let colonnes = 0;
+//  let isTableRemoved = false;
+//  function ajouterColonne() {
 //     colonnes++;
   
 //     const colonne = table.rows;

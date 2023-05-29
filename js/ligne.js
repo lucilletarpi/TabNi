@@ -1,9 +1,8 @@
-import { colonnes, table } from "./colonne.js";
 
-// export let lignes = 0;
+//  let lignes = 0;
 
 
-// export function ajouterLigne() {
+//  function ajouterLigne() {
 
 //     lignes++;
   

@@ -2,9 +2,9 @@ const btnCol = document.getElementById("btnCol");
 const btnLigne = document.getElementById("btnLigne");
 const btnRegister = document.getElementById("btnRegister");
 const btnRemove = document.getElementById("remove");
-export const table = document.getElementById("myTable");
-export let colonnes = 0;
-export let lignes = 0;
+ const table = document.getElementById("myTable");
+ let colonnes = 0;
+ let lignes = 0;
 
 btnCol.addEventListener("click", ajouterColonne);
 btnLigne.addEventListener("click", ajouterLigne);
@@ -18,7 +18,7 @@ function tableRow(){
   document.querySelector('#row').remove();
   
 }
-export function ajouterColonne() {
+ function ajouterColonne() {
 
   colonnes++;
 
@@ -60,9 +60,7 @@ export function ajouterColonne() {
 }
 
 
-
-
-export function ajouterLigne() {
+ function ajouterLigne() {
 
     lignes++;
   

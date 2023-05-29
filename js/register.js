@@ -1,3 +1,3 @@
-export function register(){
+ function register(){
     localStorage.getItem()
 }
