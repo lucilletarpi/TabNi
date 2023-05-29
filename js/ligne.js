@@ -1,4 +1,4 @@
-import { colonnes, table } from "./colonne";
+import { colonnes, table } from "./colonne.js";
 
 export let lignes = 0;
 
