@@ -1,6 +1,6 @@
-import { ajouterColonne } from "./colonne";
-import { ajouterLigne} from "./ligne";
-import { register } from "./register";
+import { ajouterColonne } from "./colonne.js";
+import { ajouterLigne} from "./ligne.js";
+import { register } from "./register.js";
 
 const btnCol = document.getElementById("btnCol");
 const btnLigne = document.getElementById("btnLigne");

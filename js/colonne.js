@@ -1,5 +1,3 @@
-import { lignes } from './ligne';
-
 export const table = document.getElementById("myTable");
 export let colonnes = 0;
 export let isTableRemoved = false;
