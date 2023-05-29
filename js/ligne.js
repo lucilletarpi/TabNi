@@ -1,16 +1,21 @@
-// const table = document.getElementById("myTable");
+import { colonnes, table } from "./colonne";
 
-// function ajouterLigne() {
-//     var newRow = table.insertRow();
-//     var cols = colonnes;
+export let lignes = 0;
+
+
+export function ajouterLigne() {
+
+    lignes++;
   
-//     for (var i = 0; i < cols; i++) {
-//       var newCell = newRow.insertCell();
-//       newCell.innerHTML = "Nouvelle cellule";
-//     }
-//   }
-
-
-// export function clickLigne(){
-//     document.getElementById("btnLigne").addEventListener("click", ajouterLigne);
-// };
+    const tbody = table.querySelector("tbody");
+    const ligne = tbody.insertRow();
+    ligne.classList.add(`row-${lignes}`);
+    ligne.id = 'row';
+  
+    for (let i = 0; i < colonnes; i++) {
+      const newLigne = ligne.insertCell();
+      newLigne.innerHTML = "Nouvelle cellule";
+      newLigne.contentEditable = true;
+      newLigne.classList.add(`col-${i + 1}`, `row-${lignes}`);
+    }
+  }

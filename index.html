@@ -6,12 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./js/app.js" type="module"></script>
     <link rel="stylesheet" href="./Css/style.css">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap" rel="stylesheet">
+    <title>TabNi</title>
 </head>
 <body>
+  <header>
+    <h1 class="title">Votre tableau en quelque click</h1>
+    
+  </header>
+  <nav>
+  <button id="btnCol">Nouvelle colonne</button>
+  <button id="btnLigne">Nouvelle Ligne</button>
+  <button id="btnRegister">Sauvegarder <br> (en cours de développement)</button>
+  <button id="remove">Supprimer ligne</button>
+  </nav>
   <main class="buttons">
-    <button id="btnCol">Nouvelle colonne</button>
-    <button id="btnLigne">Nouvelle Ligne</button>
+    <h2 contenteditable="true">Le titre de votre tableau</h2>
     <div class="tab">
       <table id="myTable">
         <thead>

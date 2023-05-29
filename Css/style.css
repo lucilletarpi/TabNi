@@ -1,18 +1,25 @@
+button{
+    margin: 1em;
+    padding: 1em;
+    border-radius: 2em;
+    border: none;
+    background-color: #09a4a4cc;
+}
 body{
-    background-color: aqua;
+display: flex;
+align-items: center;
+flex-direction: column;
+font-family: 'Cherry Bomb One', cursive;
 }
-table,
-td {
-    border: 1px solid #333;
-    width: 3px ;
-}
-
-thead,
-tr {
-    background-color: #333;
+thead {
+    background-color: #56c6d9;
     color: #fff;
 }
-
+td{
+    width: 7em;
+    padding: 1em;
+    border: 1px solid rgb(59 130 246 / .5);
+}
 .colonnes{
     background-color: blue;
 }
